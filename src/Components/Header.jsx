@@ -26,27 +26,32 @@ const Header = () => {
     >
       <div className="flex justify-between items-center">
         <motion.div className="flex gap-4" variants={containerVariants}>
-          <motion.p
+          <motion.a
+            href="#my-journey"
             variants={itemVariants}
             whileHover={{ scale: 1.1, color: "#9ca3af" }}
             className="text-sm sm:text-xl cursor-pointer"
           >
-            Work
-          </motion.p>
-          <motion.p
+            My Journey
+          </motion.a>
+
+          <motion.a
+            href="#projects"
             variants={itemVariants}
             whileHover={{ scale: 1.1, color: "#9ca3af" }}
             className="text-sm sm:text-xl cursor-pointer"
           >
-            Education
-          </motion.p>
-          <motion.p
+            Projects
+          </motion.a>
+
+          <motion.a
+            href="#contact"
             variants={itemVariants}
             whileHover={{ scale: 1.1, color: "#9ca3af" }}
             className="text-sm sm:text-xl cursor-pointer"
           >
             Contact
-          </motion.p>
+          </motion.a>
         </motion.div>
 
         <motion.div className="flex items-center gap-4" variants={containerVariants}>

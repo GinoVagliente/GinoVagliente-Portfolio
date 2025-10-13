@@ -29,14 +29,10 @@ const MyJourney = () => {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 1 }}
-      className="flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C]"
+    <div
+      id="my-journey" className="flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C]"
     >
-      <h2 className="text-3xl sm:text-6xl mb-10 text-left">My Journey</h2>
+      <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left">My Journey</h2>
       <div className="w-full h-px bg-gray-900 mb-10"></div>
 
       <div className="flex flex-col space-y-12 w-full">
@@ -47,13 +43,17 @@ const MyJourney = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-6"
             >
-              <div className="w-20 flex-shrink-0">
-                <img src={milestone.img} alt={milestone.title} className="w-full h-auto" />
+              <div className="w-20">
+                <img
+                  src={milestone.img}
+                  alt={milestone.title}
+                  className="w-full h-auto mx-auto" 
+                />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col text-center sm:text-left">
                 <h3 className="text-2xl font-semibold">{milestone.year}</h3>
                 <p className="text-lg font-semibold">{milestone.title}</p>
                 <p className="text-lg font-normal mt-1">{milestone.description}</p>
@@ -65,7 +65,8 @@ const MyJourney = () => {
         ))}
       </div>
 
-    </motion.div>
+
+    </div>
   );
 };
 
