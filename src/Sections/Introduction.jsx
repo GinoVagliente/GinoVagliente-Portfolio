@@ -16,7 +16,7 @@ const Introduction = () => {
           <div className="flex justify-between items-center w-full">
             <p className="text-sm sm:text-2xl">Argentina</p>
             <div className="flex items-center space-x-2">
-              <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+              <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
               <p className="text-sm sm:text-2xl">Currently looking for work</p>
             </div>
           </div>
