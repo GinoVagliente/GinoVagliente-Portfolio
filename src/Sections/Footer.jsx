@@ -1,0 +1,79 @@
+import { motion } from "framer-motion";
+
+const Footer = () => {
+  return (
+    <>
+      <div id="footer" className="w-full h-0.5 bg-gray-900"></div>
+
+      <motion.div
+        className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 py-8 sm:py-20"
+      >
+        <motion.div
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-20"
+        >
+              <motion.h2
+            className="text-xl sm:text-3xl"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            My Links
+          </motion.h2>
+
+          <motion.h2
+            className="text-xl sm:text-3xl"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            My name
+          </motion.h2>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-2 sm:gap-8 text-lg sm:text-3xl"
+          >
+            <motion.a
+              href="https://github.com"
+              target="_blank"
+              whileHover={{ scale: 1.1, color: "#9ca3af" }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="transition-colors"
+            >
+              Github
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com"
+              target="_blank"
+              whileHover={{ scale: 1.1, color: "#9ca3af" }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="transition-colors"
+            >
+              Linkedin
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        {/* Derecha */}
+        <motion.h2
+          className="text-xl sm:text-3xl mt-4 sm:mt-0"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        >
+          Last Updated 14-10-2025
+        </motion.h2>
+      </motion.div>
+    </>
+  );
+};
+
+export default Footer;

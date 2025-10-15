@@ -45,7 +45,7 @@ const Header = () => {
           </motion.a>
 
           <motion.a
-            href="#contact"
+            href="#footer"
             variants={itemVariants}
             whileHover={{ scale: 1.1, color: "#9ca3af" }}
             className="text-sm sm:text-xl cursor-pointer"
