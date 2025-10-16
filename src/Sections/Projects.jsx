@@ -35,12 +35,20 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C]">
-      <h2 className="text-3xl sm:text-6xl mb-10 text-left">My Projects</h2>
-      <div className="w-full h-px bg-gray-900 mb-10"></div>
+    <div
+      id="projects"
+      className="relative flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C] overflow-hidden"
+    >
+      {/* Overlay de ruido */}
+      <div className="absolute inset-0 pointer-events-none before:content-[''] before:absolute before:inset-0 before:bg-[url('https://grainy-gradients.vercel.app/noise.svg')] before:opacity-30 before:mix-blend-multiply"></div>
+
+      <h2 className="text-3xl sm:text-6xl mb-10 text-left relative z-10">
+        My Projects
+      </h2>
+      <div className="w-full h-px bg-gray-900 mb-10 relative z-10"></div>
 
       {/* Hangman 3D Project */}
-      <div className="w-full mb-6">
+      <div className="w-full mb-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -75,11 +83,11 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        <div className="w-full h-px bg-gray-900 my-6"></div>
+        <div className="w-full h-px bg-gray-900 my-6 relative z-10"></div>
       </div>
 
       {/* Otros proyectos */}
-      <div className="flex flex-col space-y-12 w-full">
+      <div className="flex flex-col space-y-12 w-full relative z-10">
         {milestones.map((milestone, index) => (
           <div key={index} className="w-full">
             <motion.div

@@ -6,36 +6,46 @@ const MyJourney = () => {
       year: "2022",
       img: "/hat.png",
       title: "Started University",
-      description: "I started my university studies in Computer Systems Analysis, taking my first steps into the world of software development."
+      description:
+        "I started my university studies in Computer Systems Analysis, taking my first steps into the world of software development.",
     },
     {
       year: "2024 – March",
       img: "/work.png",
       title: "Joined Maser Informática",
-      description: "I joined Maser Informática as a C# Developer, working on both the frontend and backend sides of projects."
+      description:
+        "I joined Maser Informática as a C# Developer, working on both the frontend and backend sides of projects.",
     },
     {
       year: "2024 – November",
       img: "/reward.png",
       title: "Academic Honor Roll",
-      description: "I was included in the Academic Honor Roll for my outstanding performance."
+      description:
+        "I was included in the Academic Honor Roll for my outstanding performance.",
     },
     {
       year: "2025",
       img: "/hat.png",
       title: "Graduation",
-      description: "I successfully completed my studies and earned my degree in Computer Systems Analysis, marking the beginning of my professional journey."
+      description:
+        "I successfully completed my studies and earned my degree in Computer Systems Analysis, marking the beginning of my professional journey.",
     },
   ];
 
   return (
     <div
-      id="my-journey" className="flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C]"
+      id="my-journey"
+      className="relative flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C] overflow-hidden"
     >
-      <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left">My Journey</h2>
-      <div className="w-full h-px bg-gray-900 mb-10"></div>
+      {/* Overlay de ruido */}
+      <div className="absolute inset-0 pointer-events-none before:content-[''] before:absolute before:inset-0 before:bg-[url('https://grainy-gradients.vercel.app/noise.svg')] before:opacity-30 before:mix-blend-multiply"></div>
 
-      <div className="flex flex-col space-y-12 w-full">
+      <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left relative z-10">
+        My Journey
+      </h2>
+      <div className="w-full h-px bg-gray-900 mb-10 relative z-10"></div>
+
+      <div className="flex flex-col space-y-12 w-full relative z-10">
         {milestones.map((milestone, index) => (
           <div key={index} className="w-full">
             <motion.div
@@ -49,10 +59,9 @@ const MyJourney = () => {
                 <img
                   src={milestone.img}
                   alt={milestone.title}
-                  className="w-full h-auto mx-auto" 
+                  className="w-full h-auto mx-auto"
                 />
               </div>
-
               <div className="flex flex-col text-center sm:text-left">
                 <h3 className="text-2xl font-semibold">{milestone.year}</h3>
                 <p className="text-lg font-semibold">{milestone.title}</p>
@@ -64,8 +73,6 @@ const MyJourney = () => {
           </div>
         ))}
       </div>
-
-
     </div>
   );
 };

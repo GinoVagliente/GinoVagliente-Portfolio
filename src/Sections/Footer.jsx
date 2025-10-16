@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BackgroundRippleEffect } from "../Components/BackgroundRipple";
 
 const Footer = () => {
   return (
@@ -8,18 +9,11 @@ const Footer = () => {
       <motion.div
         className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 py-8 sm:py-20"
       >
+        <BackgroundRippleEffect/>
         <motion.div
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-20"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-20 z-10"
         >
-              <motion.h2
-            className="text-xl sm:text-3xl"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            My Links
-          </motion.h2>
+           
 
           <motion.h2
             className="text-xl sm:text-3xl"
