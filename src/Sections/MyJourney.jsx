@@ -37,8 +37,6 @@ const MyJourney = () => {
       id="my-journey"
       className="relative flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C] overflow-hidden"
     >
-      {/* Overlay de ruido */}
-    <div className="absolute inset-0 pointer-events-none before:content-[''] before:absolute before:inset-0 before:bg-[url('/noise.svg')] before:bg-repeat before:opacity-20"></div>
       <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left relative z-10">
         My Journey
       </h2>
