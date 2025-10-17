@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import TopographicBackground from "../Components/TopographicBackground";
+
 const HangmanModel = () => {
   const { scene } = useGLTF("/hangman.glb");
 
@@ -36,10 +36,9 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="relative flex flex-col font-bold p-20 bg-[#FFF9C0] text-[#2C2C2C] overflow-hidden"
+      className="relative flex flex-col font-bold overflow-hidden"
     >
-      <TopographicBackground/>
-      <h2 className="text-3xl sm:text-6xl mb-10 text-left relative z-10">
+      <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left relative z-10">
         My Projects
       </h2>
       <div className="w-full h-px bg-gray-900 mb-10 relative z-10"></div>

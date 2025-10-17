@@ -60,7 +60,7 @@ const Introduction = () => {
               transition={{ duration: 1, delay: 0.7 }}
               className="text-lg sm:text-xl text-left"
             >
-              Mobile Developer
+              Mobile App Developer
             </motion.p>
           </div>
         </>

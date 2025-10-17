@@ -1,4 +1,3 @@
-// TopographicBackground.jsx
 const TopographicBackground = ({ className }) => {
   return (
     <svg
@@ -6,10 +5,12 @@ const TopographicBackground = ({ className }) => {
       className={`absolute top-0 left-0 w-full h-full z-0 ${className || ""}`}
     >
       <filter id="topographyFilter">
-        <feTurbulence baseFrequency="0.005" numOctaves="5" result="turb" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="1" result="turb"/>
+
         <feComponentTransfer in="turb" result="alpha">
           <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
         </feComponentTransfer>
+        
         <feConvolveMatrix
           in="alpha"
           result="edges"
@@ -17,16 +18,10 @@ const TopographicBackground = ({ className }) => {
                         1 -8 1
                         1 1 1"
         />
-        {/* Ensancha líneas */}
-        <feMorphology in="edges" operator="dilate" radius="0.3" result="thickerEdges" />
-        <feColorMatrix
-          in="thickerEdges"
-          type="matrix"
-                  values="0 0 0 0 1
-                  0 0 0 0 1
-                  0 0 0 0 1
-                  0 0 0 1 0"
-        />
+        <feMorphology in="blurEdges" operator="dilate" radius="0.5" result="thickerEdges" />
+
+        <feFlood floodColor="white" result="lineColor"/>
+        <feComposite in="lineColor" in2="thickerEdges" operator="in" />
       </filter>
 
       <rect width="100%" height="100%" fill="transparent" filter="url(#topographyFilter)" />
@@ -35,3 +30,6 @@ const TopographicBackground = ({ className }) => {
 };
 
 export default TopographicBackground;
+/*
+this effect was inspired by https://codepen.io/finnhvman/pen/XWMNWpG THANK YOU SO MUCH
+*/
