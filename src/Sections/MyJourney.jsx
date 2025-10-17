@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import TopographicBackground from "../Components/TopographicBackground";
 
 const MyJourney = () => {
   const milestones = [
@@ -37,6 +38,7 @@ const MyJourney = () => {
       id="my-journey"
       className="relative flex flex-col font-bold p-20 bg-[#FFFCE0] text-[#2C2C2C] overflow-hidden"
     >
+      <TopographicBackground/>
       <h2 className="text-3xl sm:text-6xl mb-10 text-center md:text-left relative z-10">
         My Journey
       </h2>
