@@ -13,22 +13,23 @@ const TopographicBackground = ({ className }) => {
         <feConvolveMatrix
           in="alpha"
           result="edges"
-          kernelMatrix="1 0 1
-                        0 -4 0
-                        1 0 1"
+          kernelMatrix="1 1 1
+                        1 -8 1
+                        1 1 1"
         />
+        {/* Ensancha líneas */}
+        <feMorphology in="edges" operator="dilate" radius="0.3" result="thickerEdges" />
         <feColorMatrix
-          in="edges"
+          in="thickerEdges"
           type="matrix"
-          values="0 0 0 0 1
+                  values="0 0 0 0 1
                   0 0 0 0 1
                   0 0 0 0 1
                   0 0 0 1 0"
         />
       </filter>
 
-      {/* Rect transparente para dejar ver el fondo */}
-      <rect width="100%" height="100%" fill="black" filter="url(#topographyFilter)" />
+      <rect width="100%" height="100%" fill="transparent" filter="url(#topographyFilter)" />
     </svg>
   );
 };
