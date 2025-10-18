@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TfiLinkedin } from "react-icons/tfi";
 import { FaGithub } from "react-icons/fa";
+import { FaRegFilePdf } from "react-icons/fa6";
 
 const Header = () => {
   const containerVariants = {
@@ -24,7 +25,7 @@ const Header = () => {
       animate="show"
       variants={containerVariants}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center sm:pl-5 sm:pr-5">
         <motion.div className="flex gap-4" variants={containerVariants}>
           <motion.a
             href="#my-journey"
@@ -70,6 +71,15 @@ const Header = () => {
             className="text-lg sm:text-2xl"
           >
             <FaGithub />
+          </motion.a>
+
+            <motion.a
+            href="#"
+            variants={itemVariants}
+            whileHover={{ scale: 1.25 }}
+            className="text-lg sm:text-2xl"
+          >
+            <FaRegFilePdf />
           </motion.a>
         </motion.div>
       </div>

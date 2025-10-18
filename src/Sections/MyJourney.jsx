@@ -42,7 +42,7 @@ const MyJourney = () => {
       </h2>
       <div className="w-full h-px bg-gray-900 mb-10 relative z-10"></div>
 
-      <div className="flex flex-col space-y-12 w-full relative z-10">
+      <div className="flex flex-col w-full relative z-10 gap-5">
         {milestones.map((milestone, index) => (
           <div key={index} className="w-full">
             <motion.div

@@ -63,7 +63,7 @@ const Footer = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          Last Updated 14-10-2025
+          Last Updated 18-10-2025
         </motion.h2>
       </motion.div>
     </>

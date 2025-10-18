@@ -91,7 +91,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+              className="flex flex-col sm:flex-row items-center gap-6"
             >
               <div className="w-50 flex-shrink-0">
                 <img
