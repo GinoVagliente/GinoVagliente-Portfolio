@@ -55,7 +55,7 @@ const Footer = () => {
 
         {/* Derecha */}
         <motion.h2
-          className="text-xl sm:text-2xl mt-4 sm:mt-0"
+          className="text-xl sm:text-2xl mt-4 sm:mt-0 font-normal"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
