@@ -31,5 +31,5 @@ const TopographicBackground = ({ className }) => {
 
 export default TopographicBackground;
 /*
-this effect was inspired by https://codepen.io/finnhvman/pen/XWMNWpG THANK YOU SO MUCH
+this effect was inspired by https://codepen.io/finnhvman/pen/XWMNWpG THANK YOU SO MUCH.
 */
