@@ -18,7 +18,7 @@ const TopographicBackground = ({ className }) => {
                         1 -8 1
                         1 1 1"
         />
-        <feMorphology in="blurEdges" operator="dilate" radius="0.5" result="thickerEdges" />
+        <feMorphology in="blurEdges" operator="dilate" radius="1" result="thickerEdges" />
 
         <feFlood floodColor="white" result="lineColor"/>
         <feComposite in="lineColor" in2="thickerEdges" operator="in" />
