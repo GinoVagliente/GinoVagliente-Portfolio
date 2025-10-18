@@ -32,11 +32,11 @@ const Introduction = () => {
             className="w-full flex flex-col mt-16 "
           >
             <div className="flex justify-between w-full">
-              <div className="w-1/2 flex flex-col sm:flex-row">
-                <p className="flex flex-col sm:flex-row items-start sm:items-center text-sm sm:text-2xl font-normal">
+              <div className="w-1/2 flex flex-col sm:flex-row sm:items-center">
+                <p className="flex flex-col sm:flex-row sm:items-center text-sm sm:text-2xl font-normal">
                   Based in Argentina
                   <span className="hidden sm:inline ml-1">→</span>
-                  <span className="sm:ml-2 text-base sm:text-xl font-bold leading-none">{argTime}</span>
+                  <span className="sm:ml-2 sm:text-xl font-bold sm:-mb-1">{argTime}</span>
                 </p>
               </div>
               <div className="flex items-center space-x-2 w-1/2 justify-end">

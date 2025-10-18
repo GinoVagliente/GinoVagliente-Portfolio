@@ -13,10 +13,8 @@ const Footer = () => {
         <motion.div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-20 z-10"
         >
-           
-
           <motion.h2
-            className="text-xl sm:text-3xl"
+            className="text-xl sm:text-2xl"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -26,7 +24,7 @@ const Footer = () => {
           </motion.h2>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-2 sm:gap-8 text-lg sm:text-3xl"
+            className="flex flex-col gap-2 sm:gap-8 text-lg sm:text-2xl font-normal"
           >
             <motion.a
               href="https://github.com"
@@ -38,7 +36,7 @@ const Footer = () => {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="transition-colors"
             >
-              Github
+              → Github
             </motion.a>
             <motion.a
               href="https://www.linkedin.com"
@@ -50,14 +48,14 @@ const Footer = () => {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="transition-colors"
             >
-              Linkedin
+              → Linkedin
             </motion.a>
           </motion.div>
         </motion.div>
 
         {/* Derecha */}
         <motion.h2
-          className="text-xl sm:text-3xl mt-4 sm:mt-0"
+          className="text-xl sm:text-2xl mt-4 sm:mt-0"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
