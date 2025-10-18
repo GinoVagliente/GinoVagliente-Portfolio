@@ -7,7 +7,7 @@ const Footer = () => {
       <div id="footer" className="w-full h-0.5 bg-gray-900"></div>
 
       <motion.div
-        className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 py-8 sm:py-20"
+        className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 py-8 "
       >
         <BackgroundRippleEffect/>
         <motion.div
