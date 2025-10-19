@@ -5,6 +5,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56 }) => {
   const [gridSize, setGridSize] = useState({ rows: 0, cols: 0 });
   const [clickedCell, setClickedCell] = useState(null);
   const [rippleKey, setRippleKey] = useState(0);
+  const [lastClickTime, setLastClickTime] = useState(Date.now());
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -22,6 +23,30 @@ export const BackgroundRippleEffect = ({ cellSize = 56 }) => {
     return () => observer.disconnect();
   }, [cellSize]);
 
+  useEffect(() => {
+    if (gridSize.rows === 0 || gridSize.cols === 0) return;
+
+    const now = Date.now();
+    const elapsed = now - lastClickTime;
+    const remaining = Math.max(0, 5000 - elapsed);
+
+    const timeout = setTimeout(() => {
+      const randomRow = Math.floor(Math.random() * gridSize.rows);
+      const randomCol = Math.floor(Math.random() * gridSize.cols);
+      setClickedCell({ row: randomRow, col: randomCol });
+      setRippleKey((k) => k + 1);
+      setLastClickTime(Date.now());
+    }, remaining);
+
+    return () => clearTimeout(timeout);
+  }, [gridSize, lastClickTime]);
+
+  const handleClick = (row, col) => {
+    setClickedCell({ row, col });
+    setRippleKey((k) => k + 1);
+    setLastClickTime(Date.now());
+  };
+
   return (
     <div ref={containerRef} className="absolute inset-0 h-full w-full overflow-hidden">
       {gridSize.rows > 0 && gridSize.cols > 0 && (
@@ -32,10 +57,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56 }) => {
           cols={gridSize.cols}
           cellSize={cellSize}
           clickedCell={clickedCell}
-          onCellClick={(row, col) => {
-            setClickedCell({ row, col });
-            setRippleKey((k) => k + 1);
-          }}
+          onCellClick={handleClick}
           interactive
         />
       )}
@@ -49,7 +71,7 @@ const DivGrid = ({
   cols,
   cellSize,
   borderColor = "white",
-  fillColor = "rgba(144, 145, 38, 0.41)", 
+  fillColor = "rgba(144, 145, 38, 0.41)",
   clickedCell,
   onCellClick,
   interactive = true,
@@ -72,15 +94,15 @@ const DivGrid = ({
         const distance = clickedCell
           ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
           : 0;
-        const delay = clickedCell ? Math.max(0, distance * 55) : 0;
+        const delay = clickedCell ? Math.max(0, distance * 70) : 10;
         const duration = 200 + distance * 80;
         const style = clickedCell
           ? { "--delay": `${delay}ms`, "--duration": `${duration}ms` }
           : {};
 
         let cellClass =
-          "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]";
-        if (clickedCell) cellClass += " animate-cell-ripple [animation-fill-mode:none]";
+          "cell relative border-[0.5px] opacity-30 hover:opacity-90";
+        if (clickedCell) cellClass += " animate-cell-ripple ";
         if (!interactive) cellClass += " pointer-events-none";
 
         return (

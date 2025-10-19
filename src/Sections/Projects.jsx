@@ -50,7 +50,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+          className="flex flex-col sm:flex-row items-center sm:items-center gap-6"
         >
           <div className="w-50 h-64 flex-shrink-0 rounded-4xl overflow-hidden">
             <Canvas camera={{ position: [0.5, 0, 0], fov: 50 }} gl={{ alpha: true }}>
