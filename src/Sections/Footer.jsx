@@ -11,7 +11,7 @@ const Footer = () => {
       >
         <BackgroundRippleEffect/>
         <motion.div
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-20 z-10"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-20 z-10"
         >
           <motion.h2
             className="text-xl sm:text-2xl"
