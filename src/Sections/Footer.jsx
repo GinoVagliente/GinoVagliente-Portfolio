@@ -51,6 +51,23 @@ const Footer = () => {
               → Linkedin
             </motion.a>
           </motion.div>
+
+              <motion.div
+            className="flex flex-col gap-2 sm:gap-8 text-lg sm:text-2xl font-normal"
+          >
+            <motion.a
+              target="_blank"
+              whileHover={{ scale: 1.1, color: "#9ca3af" }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="transition-colors"
+            >
+              → Curriculum
+            </motion.a>
+           
+          </motion.div>
         </motion.div>
 
         {/* Derecha */}
@@ -61,7 +78,7 @@ const Footer = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          Last Updated 18-10-2025
+          Last Updated 19-10-2025
         </motion.h2>
       </motion.div>
     </>

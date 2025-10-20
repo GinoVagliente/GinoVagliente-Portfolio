@@ -48,7 +48,7 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center sm:items-center gap-6"
         >
@@ -89,7 +89,7 @@ const Projects = () => {
             <motion.div
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="flex flex-col sm:flex-row items-center gap-6"
             >

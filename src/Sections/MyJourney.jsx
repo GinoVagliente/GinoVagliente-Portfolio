@@ -22,9 +22,16 @@ const MyJourney = () => {
       title: "Academic Honor Roll",
       description:
         "I was included in the Academic Honor Roll for my outstanding performance.",
-    },
+    }, 
     {
-      year: "2025",
+  year: "2025 - September",
+  img: "/ielts.png",
+  title: "IELTS Results",
+  description:
+    "I took the IELTS exam and achieved an overall band score of 8.0, demonstrating a high level of proficiency in English across all four skills — listening, reading, writing, and speaking.",
+},
+    {
+      year: "2025 - November",
       img: "/hat.png",
       title: "Graduation",
       description:
