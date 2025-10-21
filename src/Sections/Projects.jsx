@@ -59,7 +59,10 @@ const Projects = () => {
               <Suspense fallback={null}>
                 <HangmanModel />
               </Suspense>
-              <OrbitControls enablePan enableZoom enableRotate />
+              <OrbitControls  enablePan={false}
+                enableZoom={false}
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}/>
             </Canvas>
           </div>
 

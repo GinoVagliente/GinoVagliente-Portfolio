@@ -9,7 +9,7 @@ const Footer = () => {
       <motion.div
         className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 py-8 "
       >
-        <BackgroundRippleEffect/>
+        <BackgroundRippleEffect />
         <motion.div
           className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-20 z-10"
         >
@@ -50,9 +50,10 @@ const Footer = () => {
             >
               → Linkedin
             </motion.a>
+
           </motion.div>
 
-              <motion.div
+          <motion.div
             className="flex flex-col gap-2 sm:gap-8 text-lg sm:text-2xl font-normal"
           >
             <motion.a
@@ -66,7 +67,7 @@ const Footer = () => {
             >
               → Curriculum
             </motion.a>
-           
+
           </motion.div>
         </motion.div>
 

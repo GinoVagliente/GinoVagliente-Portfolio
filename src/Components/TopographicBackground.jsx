@@ -5,12 +5,33 @@ const TopographicBackground = ({ className }) => {
       className={`absolute top-0 left-0 w-full h-full z-0 ${className || ""}`}
     >
       <filter id="topographyFilter">
-        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="1" result="turb"/>
-
-        <feComponentTransfer in="turb" result="alpha">
+        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="1" result="turb" />
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.01"
+          numOctaves="1"
+          seed="10"
+          result="moveNoise"
+        >
+          <animate
+            attributeName="baseFrequency"
+            values="0.01;0.012;0.01"
+            dur="60s"
+            repeatCount="indefinite"
+          />
+        </feTurbulence>
+        <feDisplacementMap
+          in="turb"
+          in2="moveNoise"
+          scale="50"
+          xChannelSelector="R"
+          yChannelSelector="G"
+          result="moved"
+        />
+        <feComponentTransfer in="moved" result="alpha">
           <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
         </feComponentTransfer>
-        
+
         <feConvolveMatrix
           in="alpha"
           result="edges"
@@ -20,7 +41,7 @@ const TopographicBackground = ({ className }) => {
         />
         <feMorphology in="blurEdges" operator="dilate" radius="1" result="thickerEdges" />
 
-        <feFlood floodColor="white" result="lineColor"/>
+        <feFlood floodColor="#F2E888" result="lineColor" />
         <feComposite in="lineColor" in2="thickerEdges" operator="in" />
       </filter>
 
