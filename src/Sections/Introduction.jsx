@@ -76,14 +76,22 @@ const Introduction = () => {
               className="text-lg sm:text-xl text-left font-bold"
             >
               FullStack Developer
-            </motion.p>
+            </motion.p>            
             <motion.p
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
               className="text-lg sm:text-xl text-left font-bold"
             >
-              Mobile Developer
+              Desktop App Developer
+            </motion.p>
+            <motion.p
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="text-lg sm:text-xl text-left font-bold"
+            >
+              Mobile App Developer
             </motion.p>
           </div>
         </>
