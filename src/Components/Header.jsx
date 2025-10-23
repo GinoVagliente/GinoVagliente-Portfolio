@@ -57,7 +57,8 @@ const Header = () => {
 
         <motion.div className="flex items-center gap-4" variants={containerVariants}>
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/gino-vagliente-734568337/"
+            target="_blank"
             variants={itemVariants}
             whileHover={{ scale: 1.25 }}
             className="text-lg sm:text-2xl"
@@ -65,7 +66,8 @@ const Header = () => {
             <TfiLinkedin />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://github.com/GinoVagliente"
+            target="_blank"
             variants={itemVariants}
             whileHover={{ scale: 1.25 }}
             className="text-lg sm:text-2xl"
@@ -73,7 +75,7 @@ const Header = () => {
             <FaGithub />
           </motion.a>
 
-            <motion.a
+          <motion.a
             href="#"
             variants={itemVariants}
             whileHover={{ scale: 1.25 }}
