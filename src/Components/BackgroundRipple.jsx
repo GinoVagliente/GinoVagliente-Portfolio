@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import "./BackgroundRippleEffect.css"; // aquí van las animaciones CSS
 
-export const BackgroundRippleEffect = ({ cellSize = 56 }) => {
+
+export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
   const containerRef = useRef(null);
   const [gridSize, setGridSize] = useState({ rows: 0, cols: 0 });
   const [clickedCell, setClickedCell] = useState(null);
@@ -52,13 +54,14 @@ export const BackgroundRippleEffect = ({ cellSize = 56 }) => {
       {gridSize.rows > 0 && gridSize.cols > 0 && (
         <DivGrid
           key={`base-${rippleKey}`}
-          className="mask-radial-from-50% mask-radial-at-top opacity-60"
+          className="mask-radial-from-50% mask-radial-at-top opacity-90"
           rows={gridSize.rows}
           cols={gridSize.cols}
           cellSize={cellSize}
           clickedCell={clickedCell}
           onCellClick={handleClick}
           interactive
+          skewAngle={skewAngle}
         />
       )}
     </div>
@@ -75,6 +78,7 @@ const DivGrid = ({
   clickedCell,
   onCellClick,
   interactive = true,
+  skewAngle = -10,
 }) => {
   const cells = Array.from({ length: rows * cols }, (_, idx) => idx);
 
@@ -97,11 +101,15 @@ const DivGrid = ({
         const delay = clickedCell ? Math.max(0, distance * 70) : 10;
         const duration = 200 + distance * 80;
         const style = clickedCell
-          ? { "--delay": `${delay}ms`, "--duration": `${duration}ms` }
+          ? {
+              "--delay": `${delay}ms`,
+              "--duration": `${duration}ms`,
+              "--skew": `${skewAngle}deg`,
+            }
           : {};
 
         let cellClass =
-          "cell relative border-[0.5px] opacity-30 hover:opacity-90";
+          "cell relative border-[0.5px] opacity-30";
         if (clickedCell) cellClass += " animate-cell-ripple ";
         if (!interactive) cellClass += " pointer-events-none";
 
@@ -109,7 +117,12 @@ const DivGrid = ({
           <div
             key={idx}
             className={cellClass}
-            style={{ backgroundColor: fillColor, borderColor, ...style }}
+            style={{
+              backgroundColor: fillColor,
+              borderColor,
+              transform: `skewX(${skewAngle}deg)`,
+              ...style,
+            }}
             onClick={interactive ? () => onCellClick(rowIdx, colIdx) : undefined}
           />
         );
