@@ -21,7 +21,7 @@ const Introduction = () => {
 
   return (
     <>
-      <div className="relative flex flex-col justify-center items-start min-h-screen font-bold bg-[#FFFACD] text-[#2C2C2C] px-4 sm:px-20 ">
+      <div className="relative flex flex-col justify-center items-start min-h-screen font-bold  text-[#2C2C2C] px-4 sm:px-20 ">
         <Header />
         <>
           <BackgroundRippleEffect />

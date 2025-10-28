@@ -20,7 +20,7 @@ const TopographicBackground = ({ className }) => {
         />
         <feMorphology in="blurEdges" operator="dilate" radius="1" result="thickerEdges" />
 
-        <feFlood floodColor="#F2E888" result="lineColor"/>
+        <feFlood floodColor="#D2D2CC" result="lineColor"/>
         <feComposite in="lineColor" in2="thickerEdges" operator="in" />
       </filter>
 
