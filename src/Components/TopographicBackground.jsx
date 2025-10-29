@@ -5,12 +5,12 @@ const TopographicBackground = ({ className }) => {
       className={`absolute top-0 left-0 w-full h-full z-0 ${className || ""}`}
     >
       <filter id="topographyFilter">
-        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="1" result="turb"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="1" result="turb" />
 
         <feComponentTransfer in="turb" result="alpha">
           <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
         </feComponentTransfer>
-        
+
         <feConvolveMatrix
           in="alpha"
           result="edges"
@@ -18,18 +18,41 @@ const TopographicBackground = ({ className }) => {
                         1 -8 1
                         1 1 1"
         />
-        <feMorphology in="blurEdges" operator="dilate" radius="1" result="thickerEdges" />
+        <feMorphology in="edges" operator="dilate" radius="1" result="thickerEdges" />
 
-        <feFlood floodColor="#D2D2CC" result="lineColor"/>
+        <feFlood floodColor="#D2D2CC" result="lineColor" />
         <feComposite in="lineColor" in2="thickerEdges" operator="in" />
       </filter>
 
+      <filter id="grainFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.9"
+          numOctaves="3"
+          seed="2"
+          stitchTiles="stitch"
+          result="noise"
+        />
+        <feColorMatrix
+          in="noise"
+          type="matrix"
+          values="0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 0.3 0" />
+      </filter>
+
       <rect width="100%" height="100%" fill="transparent" filter="url(#topographyFilter)" />
+
+      <rect width="100%" height="100%" fill="transparent" filter="url(#grainFilter)" />
     </svg>
   );
 };
 
 export default TopographicBackground;
+
 /*
 this effect was inspired by https://codepen.io/finnhvman/pen/XWMNWpG THANK YOU SO MUCH.
 */
+
+

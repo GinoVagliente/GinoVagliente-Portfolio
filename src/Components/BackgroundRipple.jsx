@@ -83,6 +83,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
           cellColors={cellColors}
         />
       )}
+      <div className="background-grain"></div>
     </div>
   );
 };
