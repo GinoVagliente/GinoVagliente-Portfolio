@@ -19,17 +19,3 @@
   animation-delay: var(--delay, 0ms);
   animation-fill-mode: forwards;
 }
-
-.background-grain {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  background-image: 
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><filter id='n' x='0' y='0'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.25'/></svg>");
-  background-repeat: repeat;
-  background-size: cover;
-  opacity: 0.25; /* ajustá visibilidad */
-  mix-blend-mode: overlay; /* se mezcla bien con colores */
-  animation: grainMove 8s steps(10) infinite;
-}
