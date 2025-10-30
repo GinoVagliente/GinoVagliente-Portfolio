@@ -23,6 +23,14 @@ const Projects = () => {
         "Artist Arena is a comprehensive music analytics platform that lets you explore artists, albums, and head-to-head artist matchups. With its interactive interface and detailed visualizations, users can compare metrics like streams, popularity, followers, and album performance using the Spotify API.",
       url: "https://artist-arena.vercel.app",
     },
+    {
+      title: "Draw the Sound",
+      img: "/dts.png",
+      subtitle: "Spotify API + Drawing + Rating others",
+      description:
+        "ITS NOT DONE, AS SOON AS IT'S ATLEAST 50% DONE I'LL MAKE THE REPO PUBLIC: Draw the Sound lets you visually express how an artist, song, or album makes you feel. Using the Spotify API, you can explore your favorite artists and create drawings that capture the emotions and vibes their music inspires and compare / rate others.",
+      url: "",
+    }
   ];
 
   const hangmanProject = {
@@ -59,10 +67,10 @@ const Projects = () => {
               <Suspense fallback={null}>
                 <HangmanModel />
               </Suspense>
-              <OrbitControls  enablePan={false}
+              <OrbitControls enablePan={false}
                 enableZoom={false}
                 minPolarAngle={Math.PI / 2}
-                maxPolarAngle={Math.PI / 2}/>
+                maxPolarAngle={Math.PI / 2} />
             </Canvas>
           </div>
 
