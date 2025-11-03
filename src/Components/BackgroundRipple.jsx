@@ -11,9 +11,9 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
   const [colorIndex, setColorIndex] = useState(0);
 
   const colorPairs = [
-    ["rgba(0,128,255,0.3)", "rgba(0,64,255,0.3)"],
-    ["rgba(255,128,0,0.3)", "rgba(255,64,0,0.3)"],
-    ["rgba(0,255,128,0.3)", "rgba(0,200,64,0.3)"],
+    ["rgba(0,128,255,0.4)", "rgba(0,64,255,0.4)"],
+    ["rgba(255,128,0,0.4)", "rgba(255,64,0,0.4)"],
+    ["rgba(0,255,128,0.4)", "rgba(0,200,64,0.4)"],
     ["rgba(255,215,0,0.5)", "rgba(255,200,0,0.5)"],
   ];
 
