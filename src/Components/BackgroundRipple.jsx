@@ -14,7 +14,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
     ["rgba(0,128,255,0.4)", "rgba(0,64,255,0.4)"],
     ["rgba(255,128,0,0.4)", "rgba(255,64,0,0.4)"],
     ["rgba(0,255,128,0.4)", "rgba(0,200,64,0.4)"],
-    ["rgba(255,215,0,0.5)", "rgba(255,200,0,0.5)"],
+    ["rgba(170,0,255,0.4)", "rgba(128,0,200,0.4)"],
   ];
 
   useEffect(() => {
@@ -63,7 +63,10 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
         const distance = Math.hypot(r - row, c - col);
         const delay = distance * 50;
         setTimeout(() => {
-          setCellColors((prev) => ({ ...prev, [`${r}-${c}`]: finalColor }));
+          setCellColors((prev) => ({
+            ...prev,
+            [`${r}-${c}`]: finalColor,
+          }));
         }, delay);
       }
     }
@@ -88,15 +91,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
   );
 };
 
-const DivGrid = ({
-  rows,
-  cols,
-  cellSize,
-  borderColor = "white",
-  fillColor = "rgba(144, 145, 38, 0.41)",
-  clickedCell,
-  skewAngle = -10, cellColors }) => {
-
+const DivGrid = ({ rows, cols, cellSize, clickedCell, skewAngle = -10, cellColors }) => {
   const cells = Array.from({ length: rows * cols }, (_, idx) => idx);
   const gridStyle = {
     display: "grid",
@@ -106,11 +101,21 @@ const DivGrid = ({
     height: "100%",
   };
 
+  const reduceOpacity = (rgba, factor = 0.3) => {
+    const matches = rgba.match(/rgba?\((\d+),(\d+),(\d+),?([\d.]*)?\)/);
+    if (!matches) return rgba;
+    const [_, r, g, b, a = 1] = matches;
+    const newAlpha = parseFloat(a) * factor;
+    return `rgba(${r},${g},${b},${newAlpha})`;
+  };
+
   return (
     <div className="relative z-[3]" style={gridStyle}>
       {cells.map((idx) => {
         const rowIdx = Math.floor(idx / cols);
         const colIdx = idx % cols;
+        const bgColor = cellColors[`${rowIdx}-${colIdx}`] || "rgba(144,145,38,0.41)";
+        const borderColor = reduceOpacity(bgColor, 0.3);
         const distance = clickedCell
           ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
           : 0;
@@ -122,7 +127,8 @@ const DivGrid = ({
           "--duration": `${duration}ms`,
           "--skew": `${skewAngle}deg`,
           "--animation": "rippleIsometric",
-          backgroundColor: cellColors[`${rowIdx}-${colIdx}`] || "rgba(144,145,38,0.41)",
+          backgroundColor: bgColor,
+          borderColor,
           transform: `skewX(${skewAngle}deg)`,
         };
 
@@ -130,12 +136,7 @@ const DivGrid = ({
           <div
             key={idx}
             className="cell relative border-[0.5px] opacity-30 animate-cell-ripple"
-            style={{
-              backgroundColor: fillColor,
-              borderColor,
-              transform: `skewX(${skewAngle}deg)`,
-              ...style,
-            }}
+            style={style}
           />
         );
       })}
