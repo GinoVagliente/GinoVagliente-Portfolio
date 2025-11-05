@@ -21,7 +21,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
     if (!containerRef.current) return;
     const updateGrid = () => {
       const { clientWidth, clientHeight } = containerRef.current;
-      const cols = Math.ceil(clientWidth / cellSize);
+      const cols = Math.ceil(clientWidth / cellSize) + 1;
       const rows = Math.ceil(clientHeight / cellSize);
       setGridSize({ rows, cols });
     };
@@ -99,6 +99,7 @@ const DivGrid = ({ rows, cols, cellSize, clickedCell, skewAngle = -10, cellColor
     gridTemplateRows: `repeat(${rows}, ${cellSize}px)`,
     width: "100%",
     height: "100%",
+    marginLeft: `-${cellSize}px`
   };
 
   const reduceOpacity = (rgba, factor = 0.3) => {
