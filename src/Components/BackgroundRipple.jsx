@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./BackgroundRippleEffect.css";
 
-export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
+export const BackgroundRippleEffect = ({ cellSize = 90, skewAngle = -10 }) => {
   const containerRef = useRef(null);
   const [gridSize, setGridSize] = useState({ rows: 0, cols: 0 });
   const [clickedCell, setClickedCell] = useState(null);
@@ -21,7 +21,7 @@ export const BackgroundRippleEffect = ({ cellSize = 56, skewAngle = -10 }) => {
     if (!containerRef.current) return;
     const updateGrid = () => {
       const { clientWidth, clientHeight } = containerRef.current;
-      const cols = Math.ceil(clientWidth / cellSize) + 1;
+      const cols = Math.ceil(clientWidth / cellSize) + 2;
       const rows = Math.ceil(clientHeight / cellSize);
       setGridSize({ rows, cols });
     };
