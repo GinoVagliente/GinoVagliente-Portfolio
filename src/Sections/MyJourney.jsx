@@ -73,7 +73,7 @@ const MyJourney = () => {
                   initial={{ scale: 0 }}
                   animate={hasAnimated ? { scale: 1 } : {}}
                   transition={{ type: "spring", stiffness: 200, delay: index * 0.1 }}
-                  className="flex items-center justify-center w-20 h-20 rounded-full bg-[#2C2C2C]/5 border-2 border-[#2C2C2C] text-[#2C2C2C]"
+                  className="flex items-center justify-center w-20 h-20 text-[#2C2C2C]"
                 >
                   {milestone.icon}
                 </motion.div>

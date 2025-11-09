@@ -24,7 +24,7 @@ const Introduction = () => {
     // Escuchar cambios de tamaño de ventana
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setViewBoxValue("0 0 1000 60");
+        setViewBoxValue("0 0 1500 60");
       } else {
         setViewBoxValue("0 0 2000 60");
       }
