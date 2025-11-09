@@ -66,19 +66,17 @@ const MyJourney = () => {
                 onViewportEnter={() => setHasAnimated(true)}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex flex-col sm:flex-row items-center sm:items-start gap-6"
+                className="flex flex-col sm:flex-row items-start gap-6"
               >
-                {/* Ícono dinámico */}
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={hasAnimated ? { scale: 1 } : {}}
                   transition={{ type: "spring", stiffness: 200, delay: index * 0.1 }}
-                  className="flex items-center justify-center w-20 h-20 text-[#2C2C2C]"
+                  className="flex items-center justify-center w-20 h-20 shrink-0 text-[#2C2C2C]"
                 >
                   {milestone.icon}
                 </motion.div>
 
-                {/* Texto */}
                 <div className="flex flex-col text-center sm:text-left">
                   <h3 className="text-2xl font-semibold">{milestone.year}</h3>
                   <p className="text-lg font-semibold">{milestone.title}</p>
