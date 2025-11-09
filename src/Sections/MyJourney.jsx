@@ -11,35 +11,35 @@ const MyJourney = () => {
       title: "Started University",
       description:
         "I started my university studies in Computer Systems Analysis, taking my first steps into the world of software development.",
-      icon: <LiaUniversitySolid className="text-4xl sm:text-5xl" />,
+      icon: <LiaUniversitySolid className="text-7xl" />,
     },
     {
       year: "2024 – March",
       title: "Joined Maser Informática",
       description:
         "I joined Maser Informática as a C# Developer, working on both the frontend and backend sides of projects.",
-      icon: <PiDesktopTower className="text-4xl sm:text-5xl" />,
+      icon: <PiDesktopTower className="text-7xl" />,
     },
     {
       year: "2024 – November",
       title: "Academic Honor Roll",
       description:
         "I was included in the Academic Honor Roll for my outstanding performance.",
-      icon: <CiTrophy className="text-4xl sm:text-5xl" />,
+      icon: <CiTrophy className="text-7xl" />,
     },
     {
       year: "2025 - Mid September",
       title: "IELTS Results",
       description:
         "I took the IELTS exam and achieved an overall band score of 8.0, demonstrating a high level of proficiency in English across all four skills — listening, reading, writing, and speaking.",
-      icon: <CiViewList className="text-4xl sm:text-5xl" />,
+      icon: <CiViewList className="text-7xl" />,
     },
     {
       year: "2025 - End of September",
       title: "Graduation",
       description:
         "I successfully completed my studies and earned my degree in Computer Systems Analysis, marking the beginning of my professional journey.",
-      icon: <PiGraduationCap className="text-4xl sm:text-5xl" />,
+      icon: <PiGraduationCap className="text-7xl" />,
     },
   ];
 
@@ -66,7 +66,7 @@ const MyJourney = () => {
                 onViewportEnter={() => setHasAnimated(true)}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex flex-col sm:flex-row items-start gap-6"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-6"
               >
                 <motion.div
                   initial={{ scale: 0 }}
