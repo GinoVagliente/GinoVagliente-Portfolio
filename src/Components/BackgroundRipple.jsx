@@ -116,7 +116,7 @@ const DivGrid = ({ rows, cols, cellSize, clickedCell, skewAngle = -10, cellColor
         const rowIdx = Math.floor(idx / cols);
         const colIdx = idx % cols;
         const bgColor = cellColors[`${rowIdx}-${colIdx}`] || "rgba(144,145,38,0.41)";
-        const borderColor = reduceOpacity(bgColor, 0.3);
+        const borderColor = reduceOpacity(bgColor, 0.5);
         const distance = clickedCell
           ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
           : 0;
