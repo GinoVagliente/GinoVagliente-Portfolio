@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { BackgroundRippleEffect } from "../Components/BackgroundRipple";
 const Introduction = () => {
 
-  const [viewBoxValue, setViewBoxValue] = useState("0 0 2000 60"); // valor por defecto (desktop)
-
   const [argTime, setArgTime] = useState("");
   useEffect(() => {
     const updateTime = () => {
@@ -20,20 +18,6 @@ const Introduction = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // Escuchar cambios de tamaño de ventana
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setViewBoxValue("0 0 1500 60");
-      } else {
-        setViewBoxValue("0 0 2000 60");
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <>
@@ -65,7 +49,7 @@ const Introduction = () => {
 
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox={viewBoxValue}
+            viewBox="0 0 1000 60"
             preserveAspectRatio="xMidYMid meet"
             className="w-[450px] sm:w-full h-auto "
             initial={{ opacity: 0 }}
@@ -92,7 +76,7 @@ const Introduction = () => {
               className="text-lg sm:text-xl text-left font-bold"
             >
               FullStack Developer
-            </motion.p>
+            </motion.p>            
             <motion.p
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
