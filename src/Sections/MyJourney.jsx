@@ -7,7 +7,7 @@ import { CiTrophy, CiViewList } from "react-icons/ci";
 const MyJourney = () => {
   const milestones = [
     {
-      year: "2022",
+      year: "2022 - January",
       title: "Started University",
       description:
         "I started my university studies in Computer Systems Analysis, taking my first steps into the world of software development.",
