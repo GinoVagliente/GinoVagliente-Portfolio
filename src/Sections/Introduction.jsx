@@ -68,12 +68,12 @@ const Introduction = () => {
           </motion.svg>
 
           {/* Descripción */}
-          <div className="w-full flex flex-col mt-12 space-y-2">
+          <div className="w-full flex flex-col mt-2 space-y-2">
             <motion.p
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg sm:text-xl text-left font-bold"
+              className="text-sm sm:text-2xl text-left font-normal"
             >
               FullStack Developer
             </motion.p>            
@@ -81,7 +81,7 @@ const Introduction = () => {
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg sm:text-xl text-left font-bold"
+              className="text-sm sm:text-2xl text-left font-normal"
             >
               Desktop App Developer
             </motion.p>
@@ -89,7 +89,7 @@ const Introduction = () => {
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg sm:text-xl text-left font-bold"
+              className="text-sm sm:text-2xl text-left font-normal"
             >
               Mobile App Developer
             </motion.p>

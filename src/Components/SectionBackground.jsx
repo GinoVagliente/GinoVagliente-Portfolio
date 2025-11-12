@@ -63,7 +63,7 @@ const SectionBackground = ({ className }) => {
 
       <div
         className="absolute top-[-12.5%] left-[-12.5%] w-[125%] h-[125%] z-[2] pointer-events-none"
-        style={{
+        style={{ backgroundSize: "200px 200px",
           backgroundImage: "url('/noise.png')",
           backgroundRepeat: "repeat",
           backgroundPosition: "center",
