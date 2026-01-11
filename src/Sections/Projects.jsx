@@ -26,10 +26,10 @@ const Projects = () => {
     {
       title: "Draw the Sound",
       img: "/dts.png",
-      subtitle: "Spotify API + Drawing + Rating others (still on development you can check the source code on my github)",
+      subtitle: "Spotify API + Drawing + Rating others",
       description:
         "Draw the Sound lets you visually express how an artist, song, or album makes you feel. Using the Spotify API, you can explore your favorite artists and create drawings that capture the emotions and vibes their music inspires and compare / rate others.",
-      url: "",
+      url: "https://draw-the-sound.vercel.app",
     }
   ];
 
