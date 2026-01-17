@@ -108,7 +108,7 @@ const Projects = () => {
                 <img
                   src={milestone.img}
                   alt={milestone.title}
-                  className="w-full h-auto rounded-4xl"
+                  className="w-full h-auto rounded-2xl"
                 />
               </div>
 
