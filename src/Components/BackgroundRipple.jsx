@@ -136,7 +136,7 @@ const DivGrid = ({ rows, cols, cellSize, clickedCell, skewAngle = -10, cellColor
         return (
           <div
             key={idx}
-            className="cell relative border-[2px] opacity-30 animate-cell-ripple"
+            className="cell relative border-[0.5px] opacity-30 animate-cell-ripple"
             style={style}
           />
         );
