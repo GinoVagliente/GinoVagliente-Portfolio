@@ -18,7 +18,7 @@ const Projects = () => {
     {
       title: "Artist Arena",
       img: "/ArtistArena.png",
-      subtitle: "Spotify API based web",
+      subtitle: "Spotify API based web (DUE TO SPOTIFY API NOT BEING FREE ANYMORE THIS APP IS OFFLINE, WORKING ON NEW PROJECTS)",
       description:
         "Artist Arena is a comprehensive music analytics platform that lets you explore artists, albums, and head-to-head artist matchups. With its interactive interface and detailed visualizations, users can compare metrics like streams, popularity, followers, and album performance using the Spotify API.",
       url: "https://artist-arena.vercel.app",
@@ -26,7 +26,7 @@ const Projects = () => {
     {
       title: "Draw the Sound",
       img: "/dts.png",
-      subtitle: "Spotify API + Drawing + Rating others",
+      subtitle: "Spotify API + Drawing + Rating others (DUE TO SPOTIFY API NOT BEING FREE ANYMORE THIS APP IS OFFLINE, WORKING ON NEW PROJECTS)",
       description:
         "Draw the Sound lets you visually express how an artist, song, or album makes you feel. Using the Spotify API, you can explore your favorite artists and create drawings that capture the emotions and vibes their music inspires and compare / rate others.",
       url: "https://draw-the-sound.vercel.app",
