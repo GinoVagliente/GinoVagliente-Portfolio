@@ -26,9 +26,9 @@ const Projects = () => {
     {
       title: "Draw the Sound",
       img: "/dts.png",
-      subtitle: "Spotify API + Drawing + Rating others (DUE TO SPOTIFY API NOT BEING FREE ANYMORE THIS APP IS OFFLINE, WORKING ON NEW PROJECTS)",
+      subtitle: "YouTube Embed + Drawing + Rating others (Spotify API discontinued due to pricing changes)",
       description:
-        "Draw the Sound lets you visually express how an artist, song, or album makes you feel. Using the Spotify API, you can explore your favorite artists and create drawings that capture the emotions and vibes their music inspires and compare / rate others.",
+        "Draw the Sound lets you visually express how a song makes you feel. Originally built with the Spotify API, the project now uses YouTube embeds due to recent pricing changes. Users can explore music, create drawings inspired by it, and compare or rate others' creations. You can still check the Backend and leftover files from the original idea",
       url: "https://draw-the-sound.vercel.app",
     }
   ];
