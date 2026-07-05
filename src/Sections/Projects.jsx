@@ -18,10 +18,10 @@ const Projects = () => {
     {
       title: "Artist Arena",
       img: "/ArtistArena.png",
-      subtitle: "Spotify API based web (DUE TO SPOTIFY API NOT BEING FREE ANYMORE THIS APP IS OFFLINE, WORKING ON NEW PROJECTS)",
+      subtitle: "Spotify API based web (DUE TO SPOTIFY API NOT BEING FREE ANYMORE THIS APP IS OFFLINE, YOU CAN CHECK THE CODE ON MY GITHUB)",
       description:
         "Artist Arena is a comprehensive music analytics platform that lets you explore artists, albums, and head-to-head artist matchups. With its interactive interface and detailed visualizations, users can compare metrics like streams, popularity, followers, and album performance using the Spotify API.",
-      url: "https://artist-arena.vercel.app",
+      url: "",
     },
     {
       title: "Draw the Sound",
@@ -114,13 +114,18 @@ const Projects = () => {
 
               <div className="flex flex-col">
                 <h3 className="text-2xl font-semibold pb-3">
-                  <a
-                    href={milestone.url}
-                    target="_blank"
-                    className="hover:text-gray-400 transition-colors"
-                  >
-                    {milestone.title}
-                  </a>
+                  {milestone.url ? (
+                    <a
+                      href={milestone.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gray-400 transition-colors"
+                    >
+                      {milestone.title}
+                    </a>
+                  ) : (
+                    <span>{milestone.title}</span>
+                  )}
                 </h3>
                 <p className="text-lg font-semibold pb-3">{milestone.subtitle}</p>
                 <p className="text-lg font-normal mt-1">{milestone.description}</p>
