@@ -56,17 +56,6 @@ const Footer = () => {
           <motion.div
             className="flex flex-col gap-2 sm:gap-8 text-lg sm:text-2xl font-normal"
           >
-            <motion.a
-              target="_blank"
-              whileHover={{ scale: 1.1, color: "#9ca3af" }}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="transition-colors"
-            >
-              → Curriculum
-            </motion.a>
 
           </motion.div>
         </motion.div>

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { TfiLinkedin } from "react-icons/tfi";
 import { FaGithub } from "react-icons/fa";
-import { FaRegFilePdf } from "react-icons/fa6";
 
 const Header = () => {
   const containerVariants = {
@@ -75,14 +74,6 @@ const Header = () => {
             <FaGithub />
           </motion.a>
 
-          <motion.a
-            href="#"
-            variants={itemVariants}
-            whileHover={{ scale: 1.25 }}
-            className="text-lg sm:text-2xl"
-          >
-            <FaRegFilePdf />
-          </motion.a>
         </motion.div>
       </div>
       <div className="w-full h-0.5 bg-gray-900 mt-2"></div>
