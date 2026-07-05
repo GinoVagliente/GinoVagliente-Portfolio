@@ -38,7 +38,7 @@ const Projects = () => {
     subtitle: "Interactive Three.js Project",
     description:
       "This project is a 3D-styled Hangman guessing game built using Three.js and react-three-fiber. It was my first experience working with Three.js, creating an interactive 3D environment where users can rotate, zoom, and pan around the Hangman model, giving the classic game a modern 3D twist.",
-    url: "https://hangman-game-puce-omega.vercel.app",
+    url: "https://hangman-game-phi-beryl.vercel.app",
   };
 
   return (
